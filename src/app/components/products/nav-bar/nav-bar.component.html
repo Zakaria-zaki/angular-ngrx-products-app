@@ -1,0 +1,46 @@
+<ul class="d-flex">
+    <li class="btn btn-info mb-auto" (click)="getAllProducts()">All</li>
+    <li class="btn btn-info mb-auto ml-2" (click)="getSelectedProducts()">Selected</li>
+    <li class="btn btn-info mb-auto ml-2" (click)="getSelectedProducts()">Available</li>
+    <li class="btn btn-danger mb-auto ml-2" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">New</li>
+    <div class="ml-auto p-2">
+        <input type="text" class="mr-2">
+        <li class="btn btn-info" (click)="getSelectedProducts()">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </li>   
+    </div>
+</ul>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add new product</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form
+            (ngSubmit)="submitBook()">>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Name:</label>
+              <input type="text" class="form-control" id="recipient-name" formControlName="productName">
+            </div>
+            <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Price:</label>
+                <input type="text" class="form-control" id="recipient-name" formControlName="productPrice">
+            </div>
+            <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Quantity:</label>
+                <input type="text" class="form-control" id="recipient-name" formControlName="productQuantity">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" (click)="submitBook()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
